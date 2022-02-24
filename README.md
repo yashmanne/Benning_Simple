@@ -75,7 +75,7 @@ gzip number_twelve.mut.R2.fastq
 ```
 
 ## Scripts
-Scripts can be downloaded from this repository in the scripts folder. Here are the main scripts to run in the following order.
+Scripts can be found in the scripts folder of this repository. Here are the main scripts to run in the following order.
 
 1. `runFastqc_slurm_EMS.sb` (optional)
 2. `getReferences_Arabidopsis.sb`
@@ -86,11 +86,11 @@ Scripts can be downloaded from this repository in the scripts folder. Here are t
 7. `runSamtoolsMarkDuplicatesEMS.sb`
 
 Each script can be run by using:
-``` bash
+```bash
 # navigate to scripts folder
 cd ./scripts/
 sbatch <script_name>
-```. 
+``` 
 
 Once the script is ran, its progress can be checked by the following:
 
