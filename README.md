@@ -119,4 +119,4 @@ chmod +x ./scripts/simple.sh
 ./scripts/simple.sh
 ```
 
-Come back in a day and it should be ready! Congrats, now you get to do the fun stuff!
+Come back in a day and it should be ready. Congrats, now you get to do the fun stuff!
