@@ -1,7 +1,22 @@
 # Running SIMPLE
 
 ## First Steps
-Download data and copy folder to the HPCC. In my example, the data was stored as 
+Download data and copy folder to the HPCC. 
+
+This can be done by downloading the raw zipped file to the MacBook to the Desktop. Then, open terminal and run:
+```bash
+scp ~/Desktop/FileFolder <username>@hpcc.msu.edu:FileFolder
+```
+This will prompt you to enter a password for your HPCC account.
+
+Next, access the HPCC via terminal:
+
+```bash
+ssh <username>@hpcc.msu.edu
+```
+or by going to https://ondemand.hpcc.msu.edu and clicking `dev-intel-16` under the `Development Nodes` drop-down, which will open a terminal on a new tab.
+
+In my example, the data was stored as 
 `/mnt/home/manneyas/BenningLab/210409_sequencing/`, which had subfolders `A`, representing the MUT files and `B` representing the WT files. Each file should have a format like `V300098986_L03_PLAujbeR032370-663_1.fq.gz`, where the `fq.gz` implies that it is a zipped fastq file and the `_1` means that it is the `R1` read.
 
 Now, make a separate folder for analysis in the same directory as the directory containing the raw data files. Make subfolders for input, scripts, archive, refs, and fastQC. 
