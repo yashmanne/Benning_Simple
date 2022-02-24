@@ -107,7 +107,7 @@ Next, copy all files in the output folder to the the `Simple/output` folder.
 Now, in `Simple/scripts/`, replace the `simple.sh` with the `simple.sh` file present in the scripts repository of this folder:
 
 ```bash
-cd Simple/scripts/
+cd ~/Desktop/Simple/scripts/
 scp <username>@hpcc.msu.edu:number_twelve/scripts/simple.sh ./simple.sh
 ```
 
