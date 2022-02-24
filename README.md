@@ -6,6 +6,10 @@ Download data and copy folder to the HPCC. In my example, the data was stored as
 
 Now, make a separate folder in same directory as the directory containing raw data files. Make subfolders for input files, scripts, archive, refs, and FastQC. Alternatively, you can download this repository directly that contains all the subfolders and scripts in place and rename the repository as the line. In my example, it is named as `number_twelve`.
 
+```bash
+cd ~
+git clone https://github.com/yashmanne/Benning_Simple.git
+```
 ```bash 
 mkdir ./number_twelve/
 cd number_twelve
