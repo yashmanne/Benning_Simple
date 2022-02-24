@@ -113,7 +113,7 @@ Once all the output files have been generated, copy the output files from the HP
 
 1. Open up terminal.
 2. Navigate to desktop by doing `cd ~/Desktop/`
-3. `scp -r <username>@hpcc.msu.edu:number_twelve/output ./ 
+3. `scp -r <username>@hpcc.msu.edu:number_twelve/output ./` 
 4. Go run a PCR while files download (can take close to an hour)
 
 Once all the files have transferred, download [Simple](https://github.com/wacguy/Simple) to your desktop and unzip. Go to the `simple_variables.sh` file and change the line variable from “EMS” to your line desired name. 
