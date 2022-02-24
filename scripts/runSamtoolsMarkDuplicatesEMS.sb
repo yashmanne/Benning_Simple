@@ -1,0 +1,21 @@
+#!/bin/bash --login
+########## Define Resources Needed with SBATCH Lines ##########
+ 
+#SBATCH --time=08:00:00             # limit of wall clock time - how long the job will run (same as -t)
+#SBATCH --ntasks=1                  # number of tasks - how many tasks (nodes) that you require (same as -n)
+#SBATCH --cpus-per-task=1           # number of CPUs (or cores) per task (same as -c)
+#SBATCH --mem=60G                    # memory required per node - amount of memory (in bytes)
+#SBATCH --job-name PicardMarkDup      # you can give your job a name for easier identification (same as -J)
+ 
+ 
+########## Command Lines to Run ##########
+
+module load picard/2.18.1-Java-1.8.0_152 
+
+cd /mnt/home/manneyas/BenningLab/number_twelve ### change to the directory where your data is located
+
+java -jar $EBROOTPICARD/picard.jar MarkDuplicates I=EMS_wt.sort.bam O=EMS_wt.sort.md.bam M=EMS_wt.matrics.txt
+
+java -jar $EBROOTPICARD/picard.jar MarkDuplicates I=EMS_mut.sort.bam O=EMS_mut.sort.md.bam M=EMS_mut.matrics.txt
+
+scontrol show job $SLURM_JOB_ID     ### write job information to output file

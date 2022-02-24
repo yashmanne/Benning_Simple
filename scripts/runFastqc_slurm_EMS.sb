@@ -1,0 +1,23 @@
+#!/bin/bash --login
+########## Define Resources Needed with SBATCH Lines ##########
+ 
+#SBATCH --time=08:00:00             # limit of wall clock time - how long the job will run (same as -t)
+#SBATCH --ntasks=1                  # number of tasks - how many tasks (nodes) that you require (same as -n)
+#SBATCH --cpus-per-task=1           # number of CPUs (or cores) per task (same as -c)
+#SBATCH --mem=2G                    # memory required per node - amount of memory (in bytes)
+#SBATCH --job-name qc_giab      # you can give your job a name for easier identification (same as -J)
+ 
+ 
+########## Command Lines to Run ##########
+ 
+module load FastQC/0.11.7-Java-1.8.0_162
+ 
+cd /mnt/home/manneyas/BenningLab/number_twelve/fastQC ### change to the directory where your data is located
+ 
+fastqc ../input/number_twelve.mut.R1.fastq.gz
+fastqc ../input/number_twelve.mut.R2.fastq.gz
+fastqc ../input/number_twelve.wt.R1.fastq.gz
+fastqc ../input/number_twelve.wt.R2.fastq.gz
+
+
+

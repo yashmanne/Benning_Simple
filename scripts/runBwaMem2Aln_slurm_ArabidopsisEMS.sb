@@ -1,0 +1,22 @@
+#!/bin/bash --login
+########## Define Resources Needed with SBATCH Lines ##########
+ 
+#SBATCH --time=16:00:00             # limit of wall clock time - how long the job will run (same as -t)
+#SBATCH --ntasks=1                  # number of tasks - how many tasks (nodes) that you require (same as -n)
+#SBATCH --cpus-per-task=24           # number of CPUs (or cores) per task (same as -c)
+#SBATCH --mem=120G                    # memory required per node - amount of memory (in bytes)
+#SBATCH --job-name arab_thal_aln      # you can give your job a name for easier identification (same as -J)
+ 
+ 
+########## Command Lines to Run ##########
+ 
+module load icc/2018.1.163-GCC-6.4.0-2.28  impi/2018.1.163
+module load bwa-mem2/2.0                   ### load necessary modules, e.g.
+
+cd /mnt/home/manneyas/BenningLab/number_twelve ### change to the directory where your data is located
+ 
+/opt/software/bwa-mem2/2.0pre2/bwa-mem2 mem -t 24 ./refs/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz ./input/number_twelve.wt.R1.fastq.gz ./input/number_twelve.wt.R2.fastq.gz > EMS_wt.sam
+
+/opt/software/bwa-mem2/2.0pre2/bwa-mem2 mem -t 24 ./refs/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz ./input/number_twelve.mut.R1.fastq.gz ./input/number_twelve.mut.R2.fastq.gz > EMS_mut.sam
+
+scontrol show job $SLURM_JOB_ID     ### write job information to output file
