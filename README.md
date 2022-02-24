@@ -120,7 +120,7 @@ Once all the files have transferred, download [Simple](https://github.com/wacguy
 
 Next, copy all files in the output folder to the the `Simple/output` folder.
 
-Now, in `Simple/scripts/`, replace the `simple.sh` with the `simple.sh` file present in the scripts repository of this folder:
+Now, in `Simple/scripts/`, replace the `simple.sh` with the `simple.sh` file present in the `scripts` folder of this repository:
 
 ```bash
 cd ~/Desktop/Simple/scripts/
