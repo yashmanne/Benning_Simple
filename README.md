@@ -85,6 +85,11 @@ Scripts can be found in the scripts folder of this repository. Here are the main
 6. `runSamtoolsBam_Sort_IndexEMS.sb`
 7. `runSamtoolsMarkDuplicatesEMS.sb`
 
+Before running each script, you'll need to replace the first line that tells the software where files are located with with your own file path:
+
+Ex:
+replace `cd /mnt/home/manneyas/BenningLab/number_twelve/fastQC` as `cd /mnt/home/roncook/number_twelve/fastQC`
+
 Each script can be run by using:
 ```bash
 # navigate to scripts folder
