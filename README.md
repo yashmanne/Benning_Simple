@@ -4,14 +4,10 @@
 Download data and copy folder to the HPCC. In my example, the data was stored as 
 `/mnt/home/manneyas/BenningLab/210409_sequencing/`, which had subfolders `A`, representing the MUT files and `B` representing the WT files. Each file should have a format like `V300098986_L03_PLAujbeR032370-663_1.fq.gz`, where the `fq.gz` implies that it is a zipped fastq file and the `_1` means that it is the `R1` read.
 
-Now, make a separate folder in same directory as the directory containing raw data files. Make subfolders for input files, scripts, archive, refs, and FastQC. Alternatively, you can download this repository directly that contains all the subfolders and scripts in place and rename the repository as the line. In my example, it is named as `number_twelve`.
+Now, make a separate folder for analysis in the same directory as the directory containing the raw data files. Make subfolders for input, scripts, archive, refs, and fastQC. 
 
-```bash
-cd ~
-git clone https://github.com/yashmanne/Benning_Simple.git
-```
 ```bash 
-mkdir ./number_twelve/
+mkdir ./number_twelve/ # name of folder to do analysis in
 cd number_twelve
 mkdir input
 mkdir scripts
@@ -19,6 +15,14 @@ mkdir refs
 mkdir archive
 mkdir fastQC
 mkdir output
+```
+
+Alternatively, you can download this repository directly that contains all the subfolders and scripts in place and rename the repository as the line. In my example, it is named as `number_twelve` as shown below. 
+
+```bash
+cd ~
+git clone https://github.com/yashmanne/Benning_Simple.git
+mv Benning_Simple number_twelve
 ```
 
 ## Preprocessing of Data
