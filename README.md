@@ -13,7 +13,8 @@ mkdir input
 mkdir scripts
 mkdir refs
 mkdir archive
-mkdir FastQC
+mkdir fastQC
+mkdir output
 ```
 
 ## Preprocessing of Data
@@ -91,6 +92,11 @@ squeue -lu <username>
 
 Run each script only after the previous one has finished. 
 
+Once all scripts are complete. Move files to output:
+
+```bash
+scp EMS* ./output
+```
 
 ## Running SIMPLE
 Once all the output files have been generated, copy the output files from the HPCC to the Lab Macbook by doing the following:
