@@ -93,4 +93,30 @@ Run each script only after the previous one has finished.
 
 
 ## Running SIMPLE
-Once all the output files have been generated, foll
+Once all the output files have been generated, copy the output files from the HPCC to the Lab Macbook by doing the following:
+
+1. Open up terminal.
+2. Navigate to desktop by doing `cd ~/Desktop/`
+3. `scp -r <username>@hpcc.msu.edu:number_twelve/output ./ 
+4. Go run a PCR while files download (can take close to an hour)
+
+Once all the files have transferred, download [Simple](https://github.com/wacguy/Simple) to your desktop and unzip. Go to the `simple_variables.sh` file and change the line variable from “EMS” to your line desired name. 
+
+Next, copy all files in the output folder to the the `Simple/output` folder.
+
+Now, in `Simple/scripts/`, replace the `simple.sh` with the `simple.sh` file present in the scripts repository of this folder:
+
+```bash
+cd Simple/scripts/
+scp <username>@hpcc.msu.edu:number_twelve/scripts/simple.sh ./simple.sh
+```
+
+Now, SIMPLE is ready to run by doing the following on the MacBook:
+
+```bash
+cd ~/Desktop/Simple
+chmod +x ./scripts/simple.sh
+./scripts/simple.sh
+```
+
+Come back in a day and it should be ready! Congrats, now you get to do the fun stuff!
