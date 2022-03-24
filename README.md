@@ -12,7 +12,7 @@ On the Lab MacBook:
 
 Download data to the Desktop and then copy to the HPCC. Copying can be done by opening terminal and run:
 ```bash
-scp ~/Desktop/FileFolder <username>@hpcc.msu.edu:FileFolder
+scp -r ~/Desktop/FileFolder <username>@hpcc.msu.edu:FileFolder
 ```
 This will prompt you to enter a password for your HPCC account.
 
