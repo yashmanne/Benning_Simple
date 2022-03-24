@@ -57,6 +57,8 @@ mv Benning_Simple number_twelve
 
 Ideally, we should be able to concatenate the three separate files for each of the four read types (MUT R1, MUT R2, WT R1, WT R2) into one file for each read type by doing the following:
 
+Keep in mind that the folder "210409_sequencing" is where I have stored my data files and should be replaced with the name of your folder containing the data. Subfolder A contains all files for mutant and B contains all files for the WT. If your folder is not separated this way, I encourage you to do so.
+
 ```bash
 # Navigate to desired input directory of scripts to be run.
 cd ./number_twelve/input
