@@ -1,7 +1,13 @@
 # Running SIMPLE
 
-## Getting set-up on GitHub:
-In the command line utility of your choice follow the instructions under "Generating a new SSH key" to create an SSH key [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). 
+## Getting set-up on GitHub for the HPCC:
+Access the HPCC via terminal:
+
+```bash
+ssh <username>@hpcc.msu.edu
+```
+or by going to https://ondemand.hpcc.msu.edu and clicking `dev-intel-16` under the `Development Nodes` drop-down, which will open a terminal on a new tab.
+In the terminal follow the instructions under "Generating a new SSH key" to create an SSH key [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). 
 
 Now that you have the key created you will need to run the `cat ~/.ssh/id_ed25519.pub` and copy the contents it displays (it should look like “ssh-ed25519 AAA …… email@website.com”).
 
