@@ -39,11 +39,11 @@ mkdir fastQC
 mkdir output
 ```
 
-Alternatively, you can directly download this repository, which contains all the subfolders and scripts in place, and rename the repository as the line. In my example, it is named as `number_twelve` as shown below. 
+Alternatively, you can directly download this repository, which contains all the subfolders and scripts in place, and rename the repository as the line. In my example, it is named as `number_twelve` as shown below. To do this, you will need to repeat the GitHub set-up process once more on the HPCC if you haven't already.
 
 ```bash
 cd ~
-git clone https://github.com/yashmanne/Benning_Simple.git
+git clone git@github.com:yashmanne/Benning_Simple.git
 mv Benning_Simple number_twelve
 ```
 
