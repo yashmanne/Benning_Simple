@@ -5,7 +5,7 @@ In the command line utility of your choice follow the instructions under "Genera
 
 Now that you have the key created you will need to run the `cat ~/.ssh/id_ed25519.pub` and copy the contents it displays (it should look like “ssh-ed25519 AAA …… email@website.com”).
 
-Log in to GitHub and click the icon in the right hand corner and select preferences. Click the section labeled “SSH Keys”. Here, paste the contents copied above into the box provided, and give it a good title (maybe your computer name) and an expiration date.
+Log in to GitHub and click the icon in the right hand corner and select preferences. Click the section labeled “Settings” then "SSH and GPG keys". Next, click "New SSH Key"  paste the contents copied above into the box provided, and give it a good title (maybe your computer name) and an expiration date.
 
 ## First Steps
 On the Lab MacBook:
