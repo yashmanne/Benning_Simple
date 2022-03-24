@@ -1,7 +1,7 @@
 # Running SIMPLE
 
 ## Getting set-up on GitHub:
-In the command line utility of your choice follow the instructions here to [create an ssh key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). 
+In the command line utility of your choice follow the instructions under "Generating a new SSH key" to create an shh key [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). 
 
 Now that you have the key created you will need to run the `cat ~/.ssh/id_ed25519.pub` and copy the contents it displays (it should look like “ssh-ed25519 AAA …… email@website.com”).
 
