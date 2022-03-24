@@ -55,30 +55,27 @@ mv Benning_Simple number_twelve
 
 ## Preprocessing of Data
 
+Keep in mind that the folder "210409_sequencing" is where I have stored my data files and should be replaced with the name of your folder containing the data. Subfolder A contains all files for mutant and B contains all files for the WT. If your folder is not separated this way, I encourage you to do so.
+
 Ideally, we should be able to concatenate the three separate files for each of the four read types (MUT R1, MUT R2, WT R1, WT R2) into one file for each read type by doing the following:
 
-Keep in mind that the folder "210409_sequencing" is where I have stored my data files and should be replaced with the name of your folder containing the data. Subfolder A contains all files for mutant and B contains all files for the WT. If your folder is not separated this way, I encourage you to do so.
+First, navigate to the `import_data.sh` file in the `input` folder using the "Files" -> "Home Directory" GUI on the HPCC OnDemand Dashboard. Edit the file by clicking "Edit" after hitting the three vertical dots next to each file.
+
+Now, rename the variable `dataFolder` with the path to the folder containing the data. If your data folder is in the same repository as the base folder `number_twelve`, it should be the following:
+
+```bash
+dataFolder="../../<folder_name>"
+```
+Make sure to not leave a space on either end of the `=` sign.
+
+Likewise, rename the `lineName` variable with the same name as the folder (basically the sample name) you named above. 
+
+Once the script is edited, run it in the terminal:
 
 ```bash
 # Navigate to desired input directory of scripts to be run.
 cd ./number_twelve/input
-
-# Concatentae three reads of each type together. Then zip the file for storage.
-# mut R1
-gunzip -c ../../210409_sequencing/A/*L02*_1* ../../210409_sequencing/A/*L03*_1* ../../210409_sequencing/A/*L04*_1* > number_twelve.mut.R1.fastq
-gzip number_twelve.mut.R1.fastq
-
-# mut R2
-gunzip -c ../../210409_sequencing/A/*L02*_2* ../../210409_sequencing/A/*L03*_2* ../../210409_sequencing/A/*L04*_2* > number_twelve.mut.R2.fastq
-gzip number_twelve.mut.R2.fastq
-
-# wt R1
-gunzip -c ../../210409_sequencing/B/*L02*_1* ../../210409_sequencing/B/*L03*_1* ../../210409_sequencing/B/*L04*_1* > number_twelve.wt.R1.fastq
-gzip number_twelve.wt.R1.fastq
-
-# wt R2
-gunzip -c ../../210409_sequencing/B/*L02*_2* ../../210409_sequencing/B/*L03*_2* ../../210409_sequencing/B/*L04*_2* > number_twelve.wt.R2.fastq
-gzip number_twelve.wt.R2.fastq
+bash import_data.sh
 ```
 
 In the case of the our sample sequencing, one of the MUT R2 files was corrupted so I needed to manually go through the file and remove the corruption:
