@@ -39,7 +39,7 @@ mkdir fastQC
 mkdir output
 ```
 
-Alternatively, you can download this repository directly that contains all the subfolders and scripts in place and rename the repository as the line. In my example, it is named as `number_twelve` as shown below. 
+Alternatively, you can directly download this repository, which contains all the subfolders and scripts in place, and rename the repository as the line. In my example, it is named as `number_twelve` as shown below. 
 
 ```bash
 cd ~
