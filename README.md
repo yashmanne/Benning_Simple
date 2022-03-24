@@ -1,9 +1,16 @@
 # Running SIMPLE
 
-## First Steps
-Download data and copy folder to the HPCC. 
+## Getting set-up on GitHub:
+In the command line utility of your choice follow the instructions here to [create an ssh key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). 
 
-This can be done by downloading the raw zipped file to the MacBook to the Desktop. Then, open terminal and run:
+Now that you have the key created you will need to run the `cat ~/.ssh/id_ed25519.pub` and copy the contents it displays (it should look like “ssh-ed25519 AAA …… email@website.com”).
+
+In GitLab you will want to log in, click the icon in the right hand corner and select preferences. Find the “SSH Keys” tab and click that. Now you can copy the contents into the box provided, and give it a good title (maybe your computer name) and an expiration date.
+
+## First Steps
+On the Lab MacBook:
+
+Download data to the Desktop and then copy to the HPCC. Copying can be done by opening terminal and run:
 ```bash
 scp ~/Desktop/FileFolder <username>@hpcc.msu.edu:FileFolder
 ```
