@@ -14,11 +14,12 @@ Now that you have the key created you will need to run the `cat ~/.ssh/id_ed2551
 Log in to GitHub and click the icon in the right hand corner and select “Settings”. Click the section labeled "SSH and GPG keys". Next, click "New SSH Key" paste the contents copied above into the box provided, and give it a good title (maybe your computer name) and an expiration date if desired.
 
 ## First Steps
-On the Lab MacBook:
+
+***The following shoulld be done on the Lab MacBook:***
 
 Download zipped data to the Desktop, unzip it, and upload it to the HPCC. This can be done in two ways: through an online GUI, or through the terminal.
 
-**Online GUI:** Go to https://ondemand.hpcc.msu.edu and navigate to `Files` -> `Home Directory`. Here, you can navigate through the GUI to the correct folder and hit the blue `Upload` button to upload the folder.
+**Online GUI:** Go to https://ondemand.hpcc.msu.edu and navigate to `Files` -> `Home Directory`. Here, you can navigate through the GUI to the correct folder and hit the blue `Upload` button to upload folders or files from the local computer.
 
 **Terminal:** Open terminal and run:
 
@@ -26,8 +27,6 @@ Download zipped data to the Desktop, unzip it, and upload it to the HPCC. This c
 scp -r ~/Desktop/FileFolder <username>@hpcc.msu.edu:FileFolder
 ```
 This will prompt you to enter a password for your HPCC account.
-
-
 
 Next, access the HPCC via terminal:
 
@@ -64,7 +63,7 @@ dataFolder="../../<folder_name>"
 ```
 Make sure to not leave a space on either end of the `=` sign.
 
-Likewise, rename the `lineName` variable with the same name as the folder (basically the sample name) you named above. 
+Likewise, rename the `lineName` variable with the same name as suppressor line. 
 
 Once the script is edited, run it in the terminal:
 
