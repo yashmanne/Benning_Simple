@@ -1,6 +1,7 @@
 # Running SIMPLE
 
 ## Getting set-up on GitHub for the HPCC:
+
 Access the HPCC via terminal:
 
 ```bash
@@ -17,36 +18,32 @@ Log in to GitHub and click the icon in the right hand corner and select “Setti
 
 ***The following shoulld be done on the Lab MacBook:***
 
-Download zipped data to the Desktop, unzip it, and upload it to the HPCC. This can be done in two ways: through an online GUI, or through the terminal.
+1. Download zipped data to the Desktop, unzip it, and upload it to the HPCC. This can be done in two ways:
 
-**Online GUI:** Go to https://ondemand.hpcc.msu.edu and navigate to `Files` -> `Home Directory`. Here, you can navigate through the GUI to the correct folder and hit the blue `Upload` button to upload folders or files from the local computer.
+    * **Online GUI:** Go to https://ondemand.hpcc.msu.edu and navigate to `Files` -> `Home Directory`. Here, you can navigate through the GUI to the correct folder and hit the blue `Upload` button to upload folders or files from the local computer.
+    * **Terminal:** Open terminal on the MacBook and run the following. This will prompt you to enter a password for your HPCC account (same as MSU account).
+      ```bash
+      scp -r ~/Desktop/FileFolder <username>@hpcc.msu.edu:FileFolder
+      ```
+2. Access the HPCC terminal. This can also be done in two ways:
 
-**Terminal:** Open terminal and run:
-
-```bash
-scp -r ~/Desktop/FileFolder <username>@hpcc.msu.edu:FileFolder
-```
-This will prompt you to enter a password for your HPCC account.
-
-Next, access the HPCC via terminal:
-
-```bash
-ssh <username>@hpcc.msu.edu
-```
-or by going to https://ondemand.hpcc.msu.edu and clicking `dev-intel-16` under the `Development Nodes` drop-down, which will open a terminal on a new tab.
+    * **HPCC Web Terminal:**: Go to https://ondemand.hpcc.msu.edu and click `Development Nodes` -> `dev-intel-16` to open a terminal on a new tab.  
+    * **Local Terminal:** Open terminal on the MacBook and run the following. This will prompt you to enter a password for your HPCC account (same as MSU account).
+      ```bash
+      ssh <username>@hpcc.msu.edu
+      ```
 
 In my example, the data was stored as 
 `/mnt/home/manneyas/BenningLab/210409_sequencing/`, which had subfolders `A`, representing the MUT files and `B` representing the WT files. Each file should have a format like `V300098986_L03_PLAujbeR032370-663_1.fq.gz`, where the `fq.gz` implies that it is a zipped fastq file and the `_1` means that it is the `R1` read.
 
-Now, download this GitHub repository to your local computer as a zipped folder and unzip it. Next, rename the folder with the name of suppresor line. In my example, it is named as `number_twelve`. Next, upload the folder to the HPCC so that it is in the same folder as the one containing the data folder. 
-
-by running the command below. Be sure to rename the directory with the name of the suppressor line. In my example, it is named as `number_twelve` as shown below. To run the folllowing code, you will need to repeat the GitHub set-up process once more on the HPCC if you haven't already.
-
-```bash
-cd ~
-git clone git@github.com:yashmanne/Benning_Simple.git
-mv Benning_Simple number_twelve
-```
+3. Set up an analysis directory in the directory as the one containing the data folder. This can be done in two ways:
+  * **Manually:** Download this GitHub repository to the MacBook as a zipped folder and unzip it. Next, rename the folder with the name of suppresor mutant. In my example, it is named as `number_twelve`. Then, upload the folder to the HPCC so that it is in the folder containing the data folder. 
+  * **HPCC Web Terminal:** Navigate to the HPCC's web terminal and run the following code. (This may require SSH keys to be set-up on the HPCC).
+  ```bash
+  cd ~
+  git clone git@github.com:yashmanne/Benning_Simple.git
+  mv Benning_Simple number_twelve
+  ```
 
 ## Preprocessing of Data
 
@@ -63,7 +60,7 @@ dataFolder="../../<folder_name>"
 ```
 Make sure to not leave a space on either end of the `=` sign.
 
-Likewise, rename the `lineName` variable with the same name as suppressor line. 
+Likewise, rename the `lineName` variable with the name of the suppressor mutant. 
 
 Once the script is edited, run it in the terminal:
 
