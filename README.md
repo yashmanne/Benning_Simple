@@ -87,7 +87,7 @@ cd ../mut
 head -69323007 V300098986_L03_PLAujbeR032370-663_2.fq -> V300098986_L03_PLAujbeR032370-663_2_Uncorrupted.fq
 
 # navigate to input directory of scripts to be run
-cd cd ./number_twelve/input
+cd ../number_twelve/input
 
 # concatenate files and zip to make the MUT R2.
 cat ../../210409_sequencing/mut/V300098986_L02_PLAujbeR032370-663_2.fq ../../210409_sequencing/mut/V300098986_L03_PLAujbeR032370-663_2_Uncorrupted.fq ../../210409_sequencing/mut/V300098986_L04_PLAujbeR032370-663_2.fq > number_twelve.mut.R2.fastq
