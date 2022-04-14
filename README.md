@@ -120,7 +120,7 @@ cd ./scripts/
 sbatch <script_name>
 ``` 
 
-Once the script is ran, its progress can be checked by the following:
+Once the script is run, its progress can be checked by the following:
 
 ```bash 
 squeue -lu <username>
@@ -128,7 +128,7 @@ squeue -lu <username>
 
 Run each script only after the previous one has finished. 
 
-Once all scripts are complete. Move files to output:
+Once all scripts are complete, move files to `output`:
 
 ```bash
 cd number_twelve
