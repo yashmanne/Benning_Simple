@@ -107,7 +107,7 @@ Scripts can be found in the scripts folder of this repository. Here are the main
 
 Before running each script, you'll need to replace the first line that tells the software where files are located with with your own file path:
 
-Ex: In the `runFastqc_slurm_EMS.sb` file, you'll need to replace `cd /mnt/home/`**manneyas/BenningLab/number_twelve**`/fastQC` with `cd /mnt/home/`**\<userName>/\<folderName>**`/fastQC`.
+Ex: In the `runFastqc_slurm_EMS.sb` file, you'll need to replace `cd /mnt/home/`**manneyas/BenningLab/number_twelve**`/fastQC` with `cd /mnt/home/`**\<userName>/\<folderName>**`/fastQC`. So if your username is `cookron` and the folder is `number_eleven`, the line will look like `cd/mnt/home/cookron/number_eleven/fastQC`.
 
 Each script can be edited by going to https://ondemand.hpcc.msu.edu/, and clicking `Home Directory` under the `Files` drop-down. Then, navigate to the desired script and hit `Edit` under the three dots drop-down for the file you want to edit. A new tab will allow you to edit the file and you can save the file by hitting the `Save` button on the top left.
 
