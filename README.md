@@ -70,7 +70,7 @@ cd ./number_twelve/input
 bash import_data.sh
 ```
 
-In the case of the our sample sequencing, one of the MUT R2 files was corrupted so I needed to manually go through the file and remove the corruption:
+**Side Note:** In the case of the our sample sequencing, one of the MUT R2 files was corrupted so I needed to manually go through the file and remove the corruption by doing the following:
 
 ```bash
 # navigate to folder with files
