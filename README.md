@@ -32,26 +32,13 @@ or by going to https://ondemand.hpcc.msu.edu and clicking `dev-intel-16` under t
 In my example, the data was stored as 
 `/mnt/home/manneyas/BenningLab/210409_sequencing/`, which had subfolders `A`, representing the MUT files and `B` representing the WT files. Each file should have a format like `V300098986_L03_PLAujbeR032370-663_1.fq.gz`, where the `fq.gz` implies that it is a zipped fastq file and the `_1` means that it is the `R1` read.
 
-Now, make a separate folder for analysis in the same directory as the directory containing the raw data files. Make subfolders for input, scripts, archive, refs, and fastQC. 
-
-```bash 
-mkdir ./number_twelve/ # name of folder to do analysis in
-cd number_twelve
-mkdir input
-mkdir scripts
-mkdir refs
-mkdir archive
-mkdir fastQC
-mkdir output
-```
-
-Alternatively, you can directly download this repository, which contains all the subfolders and scripts in place, and rename the repository as the line. In my example, it is named as `number_twelve` as shown below. To do this, you will need to repeat the GitHub set-up process once more on the HPCC if you haven't already.
+Now, make a separate folder for analysis in the same directory as the directory containing the raw data files by downloading this GitHub repository and uploading to the HPCC or by running the command below. Be sure to rename the directory with the name of the suppresor line. In my example, it is named as `number_twelve` as shown below. To run the folllowing code, you will need to repeat the GitHub set-up process once more on the HPCC if you haven't already.
 
 ```bash
 cd ~
 git clone git@github.com:yashmanne/Benning_Simple.git
 mv Benning_Simple number_twelve
-```
+```Make subfolders for input, scripts, archive, refs, and fastQC. 
 
 ## Preprocessing of Data
 
