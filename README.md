@@ -38,7 +38,7 @@ Now, make a separate folder for analysis in the same directory as the directory 
 cd ~
 git clone git@github.com:yashmanne/Benning_Simple.git
 mv Benning_Simple number_twelve
-```Make subfolders for input, scripts, archive, refs, and fastQC. 
+```
 
 ## Preprocessing of Data
 
