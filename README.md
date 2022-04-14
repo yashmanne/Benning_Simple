@@ -79,8 +79,9 @@ cd 210409_sequencing/A
 
 # unzip files and move files to separate folder
 mkdir ../mut/
-gunzip -k *.gz
+gunzip *.gz
 mv *.fq ../mut
+gzip *.fq
 cd ../mut
 
 # edit corrupted file
