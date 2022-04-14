@@ -37,13 +37,14 @@ In my example, the data was stored as
 `/mnt/home/manneyas/BenningLab/210409_sequencing/`, which had subfolders `A`, representing the MUT files and `B` representing the WT files. Each file should have a format like `V300098986_L03_PLAujbeR032370-663_1.fq.gz`, where the `fq.gz` implies that it is a zipped fastq file and the `_1` means that it is the `R1` read.
 
 3. Set up an analysis directory in the directory as the one containing the data folder. This can be done in two ways:
-  * **Manually:** Download this GitHub repository to the MacBook as a zipped folder and unzip it. Next, rename the folder with the name of suppresor mutant. In my example, it is named as `number_twelve`. Then, upload the folder to the HPCC so that it is in the folder containing the data folder. 
-  * **HPCC Web Terminal:** Navigate to the HPCC's web terminal and run the following code. (This may require SSH keys to be set-up on the HPCC).
-  ```bash
-  cd ~
-  git clone git@github.com:yashmanne/Benning_Simple.git
-  mv Benning_Simple number_twelve
-  ```
+
+   * **Manually:** Download this GitHub repository to the MacBook as a zipped folder and unzip it. Next, rename the folder with the name of suppresor mutant. In my example, it is named as `number_twelve`. Then, upload the folder to the HPCC so that it is in the folder containing the data folder. 
+   * **HPCC Web Terminal:** Navigate to the HPCC's web terminal and run the following code. (This may require SSH keys to be set-up on the HPCC).
+     ```bash
+     cd ~
+     git clone git@github.com:yashmanne/Benning_Simple.git
+     mv Benning_Simple number_twelve
+     ```
 
 ## Preprocessing of Data
 
