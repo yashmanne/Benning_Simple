@@ -16,11 +16,18 @@ Log in to GitHub and click the icon in the right hand corner and select “Setti
 ## First Steps
 On the Lab MacBook:
 
-Download data to the Desktop and then copy to the HPCC. Copying can be done by opening terminal and run:
+Download zipped data to the Desktop, unzip it, and upload it to the HPCC. This can be done in two ways: through an online GUI, or through the terminal.
+
+**Online GUI:** Go to https://ondemand.hpcc.msu.edu and navigate to `Files` -> `Home Directory`. Here, you can navigate through the GUI to the correct folder and hit the blue `Upload` button to upload the folder.
+
+**Terminal:** Open terminal and run:
+
 ```bash
 scp -r ~/Desktop/FileFolder <username>@hpcc.msu.edu:FileFolder
 ```
 This will prompt you to enter a password for your HPCC account.
+
+
 
 Next, access the HPCC via terminal:
 
@@ -32,7 +39,9 @@ or by going to https://ondemand.hpcc.msu.edu and clicking `dev-intel-16` under t
 In my example, the data was stored as 
 `/mnt/home/manneyas/BenningLab/210409_sequencing/`, which had subfolders `A`, representing the MUT files and `B` representing the WT files. Each file should have a format like `V300098986_L03_PLAujbeR032370-663_1.fq.gz`, where the `fq.gz` implies that it is a zipped fastq file and the `_1` means that it is the `R1` read.
 
-Now, make a separate folder for analysis in the same directory as the directory containing the raw data files by downloading this GitHub repository and uploading to the HPCC or by running the command below. Be sure to rename the directory with the name of the suppresor line. In my example, it is named as `number_twelve` as shown below. To run the folllowing code, you will need to repeat the GitHub set-up process once more on the HPCC if you haven't already.
+Now, download this GitHub repository to your local computer as a zipped folder and unzip it. Next, rename the folder with the name of suppresor line. In my example, it is named as `number_twelve`. Next, upload the folder to the HPCC so that it is in the same folder as the one containing the data folder. 
+
+by running the command below. Be sure to rename the directory with the name of the suppressor line. In my example, it is named as `number_twelve` as shown below. To run the folllowing code, you will need to repeat the GitHub set-up process once more on the HPCC if you haven't already.
 
 ```bash
 cd ~
@@ -42,7 +51,7 @@ mv Benning_Simple number_twelve
 
 ## Preprocessing of Data
 
-Keep in mind that the folder "210409_sequencing" is where I have stored my data files and should be replaced with the name of your folder containing the data. Subfolder A contains all files for mutant and B contains all files for the WT. If your folder is not separated this way, I encourage you to do so.
+Keep in mind that the folder "210409_sequencing" is where I have stored my data files and should be replaced with the name of your folder containing the data. Subfolder A contains all files for the mutant and B contains all files for the WT. If your folder is not separated this way, I encourage you to do so.
 
 Ideally, we should be able to concatenate the three separate files for each of the four read types (MUT R1, MUT R2, WT R1, WT R2) into one file for each read type by doing the following:
 
