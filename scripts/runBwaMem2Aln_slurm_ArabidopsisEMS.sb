@@ -1,6 +1,6 @@
 #!/bin/bash --login
 ########## Define Resources Needed with SBATCH Lines ##########
- 
+
 #SBATCH --time=16:00:00                 # limit of wall clock time - how long the job will run (same as -t)
 #SBATCH --ntasks=1                      # number of tasks - how many tasks (nodes) that you require (same as -n)
 #SBATCH --cpus-per-task=24              # number of CPUs (or cores) per task (same as -c)
@@ -8,9 +8,8 @@
 #SBATCH --job-name arab_thal_aln        # you can give your job a name for easier identification (same as -J)
 #SBATCH -C NOAUTO:intel16|intel18       # allows for steup with intel instructions
 
- 
 ########## Command Lines to Run ##########
- 
+
 module load icc/2018.1.163-GCC-6.4.0-2.28  impi/2018.1.163
 module load bwa-mem2/2.0                    ### load necessary modules, e.g.
 
