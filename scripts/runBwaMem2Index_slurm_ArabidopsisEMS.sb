@@ -13,8 +13,13 @@
 module load icc/2018.1.163-GCC-6.4.0-2.28  impi/2018.1.163
 module load bwa-mem2/2.0                   ### load necessary modules, e.g.
  
-cd /mnt/home/manneyas/BenningLab/number_twelve/refs ### change to the directory where your data is located
+cd ../refs ### change to the directory where your data is located
  
 /opt/software/bwa-mem2/2.0pre2/bwa-mem2 index Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz            ### call your executable
  
 scontrol show job $SLURM_JOB_ID     ### write job information to output file
+
+echo "submitting next job: runBwaMem2Aln_slurm_ArabidopsisEMS.sb"
+
+cd ../scripts
+sbatch runBwaMem2Aln_slurm_ArabidopsisEMS.sb

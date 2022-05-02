@@ -6,17 +6,33 @@
 #SBATCH --cpus-per-task=24           # number of CPUs (or cores) per task (same as -c)
 #SBATCH --mem=120G                    # memory required per node - amount of memory (in bytes)
 #SBATCH --job-name arab_thal_aln      # you can give your job a name for easier identification (same as -J)
- 
+#SBATCH -C NOAUTO:intel16|intel18     # allows for steup with intel instructions
+
  
 ########## Command Lines to Run ##########
  
 module load icc/2018.1.163-GCC-6.4.0-2.28  impi/2018.1.163
 module load bwa-mem2/2.0                   ### load necessary modules, e.g.
 
-cd /mnt/home/manneyas/BenningLab/number_twelve ### change to the directory where your data is located
- 
-/opt/software/bwa-mem2/2.0pre2/bwa-mem2 mem -t 24 ./refs/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz ./input/number_twelve.wt.R1.fastq.gz ./input/number_twelve.wt.R2.fastq.gz > EMS_wt.sam
+cd .. ### change to the directory where your data is located
 
-/opt/software/bwa-mem2/2.0pre2/bwa-mem2 mem -t 24 ./refs/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz ./input/number_twelve.mut.R1.fastq.gz ./input/number_twelve.mut.R2.fastq.gz > EMS_mut.sam
+lineName="number_twelve" # default
+ 
+source variables.sh # define variables in separate file
+
+# lineName=`cat lineName.txt` # assumes number_twelve is the only line in the file.
+# lineName=${SLURM_JOB_NAME}  # can also use job-name as ${SLURM_JOB_NAME}
+# lineName=$1 # bash input argument
+
+echo "running line $lineName"
+
+/opt/software/bwa-mem2/2.0pre2/bwa-mem2 mem -t 24 ./refs/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz ./input/${lineName}.wt.R1.fastq.gz ./input/${lineName}.wt.R2.fastq.gz > EMS_wt.sam
+
+/opt/software/bwa-mem2/2.0pre2/bwa-mem2 mem -t 24 ./refs/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz ./input/${lineName}.mut.R1.fastq.gz ./input/${lineName}.mut.R2.fastq.gz > EMS_mut.sam
 
 scontrol show job $SLURM_JOB_ID     ### write job information to output file
+
+echo "submitting next job: runBwaMem2Index_slurm_ArabidopsisEMS.sb"
+
+cd ../scripts
+sbatch runBwaMem2Index_slurm_ArabidopsisEMS.sb

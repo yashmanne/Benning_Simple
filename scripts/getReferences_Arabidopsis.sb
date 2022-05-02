@@ -10,7 +10,12 @@
  
 ########## Command Lines to Run ##########
  
-cd /mnt/home/manneyas/BenningLab/number_twelve/refs ### change to the directory where your data is located
+cd ../refs ### change to the directory where your data is located
 wget ftp://ftp.ensemblgenomes.org/pub/plants/release-51/fasta/arabidopsis_thaliana/dna/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz  ### get fasta file
 wget ftp://ftp.ensemblgenomes.org/pub/plants/release-51/variation/vcf/arabidopsis_thaliana/arabidopsis_thaliana.vcf.gz  ### get vcf file
 scontrol show job $SLURM_JOB_ID     ### write job information to output file
+
+echo "submitting next job: runBwaMem2Index_slurm_ArabidopsisEMS.sb"
+
+cd ../scripts
+sbatch runBwaMem2Index_slurm_ArabidopsisEMS.sb
