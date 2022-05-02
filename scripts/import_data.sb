@@ -1,0 +1,48 @@
+#!/bin/bash --login
+########## Define Resources Needed with SBATCH Lines ##########
+ 
+#SBATCH --time=4:00:00                  # limit of wall clock time - how long the job will run (same as -t)
+#SBATCH --ntasks=1                      # number of tasks - how many tasks (nodes) that you require (same as -n)
+#SBATCH --cpus-per-task=4               # number of CPUs (or cores) per task (same as -c)
+#SBATCH --mem=100G                      # memory required per node - amount of memory (in bytes)
+#SBATCH --job-name arab_thal_Ref        # you can give your job a name for easier identification (same as -J)
+ 
+ 
+########## Command Lines to Run ##########
+ 
+cd ../input                                  ### located in the directory with reference data
+
+echo "Getting data into input folder!"
+
+#### default variables
+dataLocation="../data_folder"       # data folder
+lineName="default"                  # line name
+lane1="L01"                         # first lane used for sequencing
+lane2="L02"                         # second lane
+lane3="L03"                         # third lane 
+
+#### replace default variables with user-input
+source ../variables.sh
+dataFolder="../${dataLocation}"
+
+#### Concatentae three reads of each type together. Then zip the file for storage.
+
+# mut R1
+gunzip -c $dataFolder/A/*${lane1}*_1* ${dataFolder}/A/*${lane2}*_1* ${dataFolder}/A/*${lane3}*_1* > ${lineName}.mut.R1.fastq
+gzip ${lineName}.mut.R1.fastq
+
+# mut R2
+gunzip -c $dataFolder/A/*${lane1}*_2* ${dataFolder}/A/*${lane2}*_2* ${dataFolder}/A/*${lane3}*_2* > ${lineName}.mut.R2.fastq
+gzip ${lineName}.mut.R2.fastq
+
+# wt R1
+gunzip -c $dataFolder/B/*${lane1}*_1* ${dataFolder}/B/*${lane2}*_1* ${dataFolder}/B/*${lane3}*_1* > ${lineName}.wt.R1.fastq
+gzip ${lineName}.wt.R1.fastq
+
+# wt R2
+gunzip -c $dataFolder/B/*${lane1}*_2* ${dataFolder}/B/*${lane2}*_2* ${dataFolder}/B/*${lane3}*_2* > ${lineName}.wt.R2.fastq
+gzip ${lineName}.wt.R2.fastq
+
+echo "submitting next job: getReferences_Arabidopsis.sb"
+cd ../scripts
+sbatch getReferences_Arabidopsis.sb

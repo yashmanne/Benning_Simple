@@ -1,25 +1,27 @@
 #!/bin/bash --login
 ########## Define Resources Needed with SBATCH Lines ##########
  
-#SBATCH --time=04:00:00             # limit of wall clock time - how long the job will run (same as -t)
-#SBATCH --ntasks=1                  # number of tasks - how many tasks (nodes) that you require (same as -n)
-#SBATCH --cpus-per-task=1           # number of CPUs (or cores) per task (same as -c)
-#SBATCH --mem=40G                    # memory required per node - amount of memory (in bytes)
-#SBATCH --job-name arab_thal_index      # you can give your job a name for easier identification (same as -J)
+#SBATCH --time=04:00:00                 # limit of wall clock time - how long the job will run (same as -t)
+#SBATCH --ntasks=1                      # number of tasks - how many tasks (nodes) that you require (same as -n)
+#SBATCH --cpus-per-task=1               # number of CPUs (or cores) per task (same as -c)
+#SBATCH --mem=40G                       # memory required per node - amount of memory (in bytes)
+#SBATCH --job-name arab_thal_Index      # you can give your job a name for easier identification (same as -J)
  
  
 ########## Command Lines to Run ##########
  
 module load icc/2018.1.163-GCC-6.4.0-2.28  impi/2018.1.163
-module load bwa-mem2/2.0                   ### load necessary modules, e.g.
+module load bwa-mem2/2.0                    ### load necessary modules, e.g.
  
-cd ../refs ### change to the directory where your data is located
- 
-/opt/software/bwa-mem2/2.0pre2/bwa-mem2 index Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz            ### call your executable
- 
-scontrol show job $SLURM_JOB_ID     ### write job information to output file
+cd ../refs                                  ### located in directory with reference data 
 
-echo "submitting next job: runBwaMem2Aln_slurm_ArabidopsisEMS.sb"
+echo "Indexing reference genome!"
+ 
+/opt/software/bwa-mem2/2.0pre2/bwa-mem2 index Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz        ### call your executable
+ 
+scontrol show job $SLURM_JOB_ID             ### write job information to output file
+
+echo "Submitting next job: runBwaMem2Aln_slurm_ArabidopsisEMS.sb"
 
 cd ../scripts
 sbatch runBwaMem2Aln_slurm_ArabidopsisEMS.sb
