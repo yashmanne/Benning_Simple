@@ -114,8 +114,10 @@ Once all the output files have been successfully generated, copy the output file
 
 ## Running SIMPLE
 1. Once all the files have transferred, download [Simple](https://github.com/wacguy/Simple) to your desktop and unzip. Rename the folder as `Simple` instead of `Simple-master`. Go to the `simple_variables.sh` file under `Simple/scripts/` and change the `line` variable from “EMS” to your desired sample name as done for the `lineName` variable above. 
+
 2. Next, copy all files in the output folder to the the `Simple/output` folder.
-3. Now, in `Simple/scripts/`, replace the `simple.sh` with the `simple.sh` file present in the `scripts` folder of the data analysis repository. The new `simple.sh` file can be downloaded from the HPCC GUI.
+
+3. Now, in `Simple/scripts/`, replace the `simple.sh` with the `simple.sh` file present in the `scripts` folder of the data analysis repository. The new `simple.sh` file can be downloaded using the HPCC GUI as done above.
       
 <!--       ```bash
       cd ~/Desktop/Simple/scripts/
