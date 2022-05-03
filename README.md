@@ -1,7 +1,9 @@
 # Running SIMPLE
 
 ## Getting set-up on GitHub for the HPCC:
-Please note that this step is only neccessary if you plan to edit scripts and have access to this repository as a collaborator:
+
+**Please note that this step is only neccessary if you plan to edit scripts and have access to this repository as a collaborator.**
+
 0. Create a GitHub account [here](https://github.com/).
 1. Access the HPCC by going to https://ondemand.hpcc.msu.edu and clicking `dev-intel-16` under the `Development Nodes` drop-down, which will open a terminal on a new tab.
 2. In the terminal follow the instructions under "Generating a new SSH key" to create an SSH key [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). 
@@ -10,7 +12,7 @@ Please note that this step is only neccessary if you plan to edit scripts and ha
 
 ## First Steps
 
-***The following shoulld be done on the Lab MacBook:***
+***The following should be done on the Lab MacBook:***
 
 1. Download the zipped data folder to the Desktop and unzip it. Verify that it contains two subfolders called `A` and `B`, where `A` contains the sequencing files for the MUT reads, and `B` contains the sequencing files for the WT reads. Each file should have a format like `V300098986_L03_PLAujbeR032370-663_1.fq.gz`, where the `L03` indicates that the file is from sequencing lane 3, the `_1` means that it is the `R1` read, and the `fq.gz` implies that it is a zipped fastq file. The current sequencing company splits reads across 3 lanes and these three files must be joined together in increasing order by the lane. For example, if the lanes are `L02`, `L03`, and `L04`, we must join `L02`->`L03`->`L04` such that `L02` is the beginning and `L04` is the end. The following script will ideally concatenate the three separate files for each fo the four read types: MUT R1, MUT R2, WT R1, and WT R2.
    
