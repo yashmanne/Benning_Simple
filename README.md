@@ -71,9 +71,8 @@ Once this file is saved, we can run subsequent HPCC scripts!
 Navigate to the folder you uploaded from this GitHub to the HPCC (what you just named after your mutant):
 
  ```bash
-      cd ./<folder_name>/
-      
-      ``` 
+      cd ./<folder_name>/ 
+ ``` 
 
 To run the analysis, simply run the following in terminal:
 
