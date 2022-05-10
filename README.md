@@ -97,9 +97,9 @@ All scripts are finished when all 7 `slurm-########.out` files show up in the sc
 
 A common issue while running the script may be that 1 or more of the data files are corrupted. In this case, the corrupted portion of the corrupted data files must be cut out. In these cases, it's common to manually contatetate three files of each files and put into the `input` folder. Since data has already been added to the `input`, script 1 (`import_data.sb`) can be skipped and the subsequent scripts can be run by running the following:
 
-      ```bash
+     ```bash
       bash runScripts.sh data
-      ```
+     ```
 
 Additionally, the quality of the sequencing files can be tested by running the `runFastqc_slurm_EMS.sb` script, which outputs HTML files containing plots of different metrics of data quality. This can be run separately by doing the following:
 
