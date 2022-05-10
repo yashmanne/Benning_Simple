@@ -76,9 +76,9 @@ Navigate to the folder you uploaded from this GitHub to the HPCC (what you just 
 
 To run the analysis, simply run the following in terminal:
 
-      ```bash
+ ```bash
       bash runScripts.sh 
-      ```
+ ```
 
 This will run all scripts listed below in the following order. These scripts can be found in the scripts folder of this repository.
    1. `import_data.sb` : gathers all data into the `input` folder into a compatible file names.
