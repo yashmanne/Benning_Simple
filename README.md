@@ -68,6 +68,12 @@ Once this file is saved, we can run subsequent HPCC scripts!
 
 ## Running HPCC Scripts
 
+Navigate to the folder you uploaded from this GitHub to the HPCC (what you just named after your mutant):
+
+ ```bash
+      cd ./<folder_name>/
+      ``` 
+
 To run the analysis, simply run the following in terminal:
 
       ```bash
