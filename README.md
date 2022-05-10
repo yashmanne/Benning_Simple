@@ -72,6 +72,7 @@ Navigate to the folder you uploaded from this GitHub to the HPCC (what you just 
 
  ```bash
       cd ./<folder_name>/
+      
       ``` 
 
 To run the analysis, simply run the following in terminal:
