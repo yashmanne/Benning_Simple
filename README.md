@@ -34,7 +34,11 @@
 4. Set up an analysis directory adjacent to the data folder. This can be done in two ways:
 
    * **Manually:** Download this GitHub repository to the MacBook as a zipped folder and unzip it. Next, rename the folder with the name of suppresor mutant. Then, upload the folder to the HPCC so that it is in the folder containing the data folder. 
-   * **HPCC Web Terminal:** Navigate to the HPCC's web terminal and run the following code. (This may require SSH keys to be set-up on the HPCC).
+   * * **Terminal, after manual download:** Open terminal on the MacBook and run the following. This will prompt you to enter a password for your HPCC account (same as MSU account).
+      ```bash
+      scp -r ~/Desktop/DataFolder <username>@hpcc.msu.edu:<DataFolder>     # replace <>'s with your MSU username and the name of your data folder
+      ```
+   * **HPCC Web Terminal, streaight from GitHub:** Navigate to the HPCC's web terminal and run the following code. (This may require SSH keys to be set-up on the HPCC).
      ```bash
      cd ~
      git clone git@github.com:yashmanne/Benning_Simple.git
