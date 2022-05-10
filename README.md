@@ -38,7 +38,7 @@
       ```bash
       scp -r ~/Desktop/DataFolder <username>@hpcc.msu.edu:<DataFolder>     # replace <>'s with your MSU username and the name of your data folder
       ```
-   * **HPCC Web Terminal, streaight from GitHub:** Navigate to the HPCC's web terminal and run the following code. (This may require SSH keys to be set-up on the HPCC).
+   * **HPCC Web Terminal, straight from GitHub:** Navigate to the HPCC's web terminal and run the following code. (This may require SSH keys to be set-up on the HPCC).
      ```bash
      cd ~
      git clone git@github.com:yashmanne/Benning_Simple.git
